@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom Steam Animations */
+@keyframes steamRise {
+  0% {
+    transform: translateY(0) scaleX(1) opacity(0.2);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateY(-20px) scaleX(1.4) opacity(0.6);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-45px) scaleX(1.8) opacity(0);
+    opacity: 0;
+  }
+}
+
+.steam-particle {
+  animation: steamRise 3s infinite ease-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #fef3c7;
+}
+::-webkit-scrollbar-thumb {
+  background: #f57224;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #e65416;
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.glass-dark {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Custom Keyframe Animations */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+.animate-float {
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+@keyframes floatReverse {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(8px); }
+}
+.animate-float-reverse {
+  animation: floatReverse 4.5s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.08); }
+}
+.animate-pulse-glow {
+  animation: pulseGlow 3.5s ease-in-out infinite;
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spinSlow 8s linear infinite;
+}
+
+@keyframes spinReverseSlow {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+.animate-spin-reverse-slow {
+  animation: spinReverseSlow 9s linear infinite;
+}
+
+/* Custom Keyframe Animations for Icons */
+@keyframes iconWiggle {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  25% { transform: rotate(-10deg) scale(1.12); }
+  75% { transform: rotate(10deg) scale(1.12); }
+}
+.animate-icon-wiggle {
+  animation: iconWiggle 2.5s ease-in-out infinite;
+}
+
+@keyframes iconBounce {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-5px) scale(1.12); }
+}
+.animate-icon-bounce {
+  animation: iconBounce 2s ease-in-out infinite;
+}
+
+@keyframes iconPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+.animate-icon-pulse {
+  animation: iconPulse 2.2s ease-in-out infinite;
+}
+
+@keyframes iconDrive {
+  0%, 100% { transform: translateX(0) scale(1); }
+  50% { transform: translateX(4px) scale(1.1); }
+}
+.animate-icon-drive {
+  animation: iconDrive 1.8s ease-in-out infinite;
+}
+
+/* Cross / Diagonal Floating Animations */
+@keyframes floatCrossTL {
+  0%, 100% { transform: translate(0px, 0px) rotate(0deg); }
+  50% { transform: translate(-6px, -10px) rotate(-1.5deg); }
+}
+.animate-float-cross-tl {
+  animation: floatCrossTL 4.5s ease-in-out infinite;
+}
+
+@keyframes floatCrossTR {
+  0%, 100% { transform: translate(0px, 0px) rotate(0deg); }
+  50% { transform: translate(6px, -10px) rotate(1.5deg); }
+}
+.animate-float-cross-tr {
+  animation: floatCrossTR 5.2s ease-in-out infinite;
+}
+
+@keyframes floatCrossBL {
+  0%, 100% { transform: translate(0px, 0px) rotate(0deg); }
+  50% { transform: translate(-6px, 10px) rotate(1.5deg); }
+}
+.animate-float-cross-bl {
+  animation: floatCrossBL 4.8s ease-in-out infinite;
+}
+
+@keyframes floatCrossBR {
+  0%, 100% { transform: translate(0px, 0px) rotate(0deg); }
+  50% { transform: translate(6px, 10px) rotate(-1.5deg); }
+}
+.animate-float-cross-br {
+  animation: floatCrossBR 5.5s ease-in-out infinite;
+}
